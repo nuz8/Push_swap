@@ -6,41 +6,73 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 00:52:33 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/12 02:40:32 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/12 05:06:30 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-t_stack	*ft_stack_new(void *content)
+// Used functions from list-manipulations for stack
+
+t_stack	*ft_stack_new(long lnum)
 {
 	t_stack	*new_node;
-	t_stack	*cont;
 
 	new_node = malloc(sizeof(t_stack));
-	cont = content;
 	if (!new_node)
 		return (NULL);
-	new_node->num = cont->num;
-	new_node->index = cont->index;
+	new_node->lnum = lnum;
+	new_node->num = 0;
+	new_node->index = 0;
 	new_node->next = NULL;
 	return (new_node);
 }
 
-void	ft_stackadd_back(t_stack **stk, t_stack *new)
+t_stack	*ft_stack_last(t_stack *stk)
+{
+	if (!stk)
+		return (NULL);
+	while (stk->next)
+		stk = stk->next;
+	return (stk);
+}
+
+void	ft_stack_addback(t_stack **root, t_stack *new)
 {
 	t_stack	*last;
 
-	if (!stk || !new)
+	if (!root || !new)
 		return ;
-	if (!*stk)
+	if (!*root)
 	{
-		*stk = new;
+		*root = new;
 		return ;
 	}
-	last = ft_stacklast(*stk);
+	last = ft_stack_last(*root);
 	last->next = new;
 }
+
+void	ft_stackfree(t_stack **root)
+{
+	t_stack	*del_node;
+	t_stack	*free_node;
+
+	if (!root)
+		return ;
+	del_node = *root;
+	while (del_node)
+	{
+		free_node = del_node;
+		del_node = del_node->next;
+		free(free_node);
+	}
+	*root = NULL;
+}
+
+
+/* ************************************************************************** */
+
+// Unused functions from list-manipulations
 
 void	ft_stackadd_front(t_stack **stk, t_stack *new)
 {
@@ -90,15 +122,6 @@ void	ft_stackiter(t_stack *stk, void (*f)(void *))
 		f(stk->index);
 		stk = stk->next;
 	}
-}
-
-t_stack	*ft_stacklast(t_stack *stk)
-{
-	if (!stk)
-		return (NULL);
-	while (stk->next)
-		stk = stk->next;
-	return (stk);
 }
 
 t_stack	*ft_stackmap(t_stack *stk, void *(*f)(void *), void (*del)(void *))
