@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 00:36:33 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/12 06:06:52 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/13 00:00:19 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,21 @@
 # include <unistd.h>
 # include <limits.h>
 
+# define _pa pa(&a, &b)
+# define _pb pb(&a, &b)
+
+# define _sa sa(&a)
+# define _sb sb(&b)
+# define _ss ss(&a, &b)
+
+# define _ra ra(&a)
+# define _rb rb(&b)
+# define _rr rr(&a, &b)
+
+# define _rra rra(&a)
+# define _rrb rra(&b)
+# define _rrr rrr(&a, &b)
+
 typedef struct	s_stack
 {
 	int				index;
@@ -26,7 +41,6 @@ typedef struct	s_stack
 	int				num;
 	struct s_stack	*next;
 }				t_stack;
-
 
 
 // parsing.c
@@ -42,18 +56,45 @@ void	avoid_long(t_stack **root);
 void	avoid_duplicates(t_stack **root);
 void	check_sorted(t_stack **root);
 
+// list_fns.c: functions adapted from libft
+t_stack	*ft_stack_new(long lnum);
+t_stack	*ft_stack_last(t_stack *stk);
+void	ft_stack_addback(t_stack **root, t_stack *new);
+void	ft_stackfree(t_stack **root);
+
+// void	ft_stackadd_front(t_stack **stk, t_stack *new);
+// void	ft_stackclear(t_stack **stk, void (*del)(void *));
+// void	ft_stackdelone(t_stack *stk, void (*del)(void*));
+// void	ft_stackiter(t_stack *stk, void (*f)(void *));
+// t_stack	*ft_stack_last(t_stack *stk);
+// t_stack	*ft_stackmap(t_stack *stk, void *(*f)(void *), void (*del)(void *));
+// int		ft_stacksize(t_list *stk);
+
+// op_push.c
+
+
+// op_swap.c
+void	swap_stack(t_stack **root);
+void	sa(t_stack **a);
+void	sb(t_stack **b);
+void	ss(t_stack **a, t_stack **b);
+
+// op_rotate.c
+void	rotate_stack(t_stack **root);
+void	ra(t_stack **a);
+void	rb(t_stack **b);
+void	rr(t_stack **a, t_stack **b);
+
+// op_rev_rotate.c
+void	rev_rotate_stack(t_stack **root);
+void	rra(t_stack **a);
+void	rrb(t_stack **b);
+void	rrr(t_stack **a, t_stack **b);
+
 // utils.c
 void	frexit(char *str, t_stack **root, char **split, int ec);
 
-// list_fns.c: functions adapted from libft
-t_stack	*ft_stack_new(long lnum);
-void	ft_stackadd_front(t_stack **stk, t_stack *new);
-void	ft_stack_addback(t_stack **stk, t_stack *new);
-void	ft_stackclear(t_stack **stk, void (*del)(void *));
-void	ft_stackdelone(t_stack *stk, void (*del)(void*));
-void	ft_stackiter(t_stack *stk, void (*f)(void *));
-t_stack	*ft_stack_last(t_stack *stk);
-t_stack	*ft_stackmap(t_stack *stk, void *(*f)(void *), void (*del)(void *));
-int		ft_stacksize(t_list *stk);
+void	print_stack_contents(t_stack *root);
+void	print_stacks(t_stack *a, t_stack *b);
 
 #endif

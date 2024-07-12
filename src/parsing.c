@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 18:30:29 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/12 06:02:50 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/12 22:17:53 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ void	parse_and_handle_errors(t_stack **root, int argc, char **argv)
 	avoid_long(root);
 	avoid_duplicates(root);
 	check_sorted(root);
+	print_stack_contents(*root);
+	
 }
 
 // Function to parse the input string when argc =2, and create a linked list of integers
@@ -44,7 +46,8 @@ void	parse_numstr(t_stack **root, char *num_str)
 
 	split = ft_split(num_str, ' ');
 	if(!split)
-		frexit("Error\n", NULL, NULL, 3);
+		frexit("Error: split\n", NULL, NULL, 3);
+		// frexit("Error\n", NULL, NULL, 3);
 	i = 0;
 	while (split[i])
 	{
@@ -52,11 +55,12 @@ void	parse_numstr(t_stack **root, char *num_str)
 		{
 			cur = ft_stack_new(ft_atol(split[i]));
 			if (!cur)
-				frexit("Error malloc'ing node\n", root, split, 3);
+				frexit("Error: node malloc\n", root, split, 3);
 			ft_stack_addback(root, cur);
 		}
 		else
-			frexit("Error\n", root, split, 2);
+			frexit("Error: in parse_numstr\n", root, split, 2);
+			// frexit("Error\n", root, split, 2);
 		i++;
 	}
 	ft_free2d(split);
@@ -79,7 +83,8 @@ void	parse_nums(t_stack **root, char **argv)
 			ft_stack_addback(root, cur);
 		}
 		else
-			frexit("Error\n", root, NULL, 2);
+			frexit("Error: in parse_nums\n", root, NULL, 2);
+			// frexit("Error\n", root, NULL, 2);
 		i++;
 	}
 }
@@ -87,7 +92,7 @@ void	parse_nums(t_stack **root, char **argv)
 // Function to convert a string to a long integer
 long	ft_atol(const char *str)
 {
-	int		signe;
+	long	signe;
 	long	num;
 	int		i;
 

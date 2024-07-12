@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 00:35:36 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/12 06:02:33 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/12 23:32:08 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,18 +39,26 @@
 // 	return (0);
 // }
 
-int	main(int argc, char **argv, char **envp)
+int	main(int argc, char **argv)
 {
+	// #define rra rr(&a)
+	// #define rrb rr(&b)
 	t_stack	*a;
-	t_stack	*b;
+	// t_stack	*b;
 
-	a = NULL;
-	b = NULL;
+	// a = NULL;
+	// b = NULL;
 	if (argc < 2)
-		return (1);;
+		return (1);
 	if (argc >= 2)
 	{
 		parse_and_handle_errors(&a, argc, argv);
+		rr(&a);
+		print_stacks(a, NULL);
+		_rra;
+		print_stacks(a, NULL);
+		_rra;
+		print_stacks(a, NULL);
 	}
 
 

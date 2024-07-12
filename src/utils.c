@@ -6,13 +6,15 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 00:49:33 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/12 06:06:42 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/12 23:07:30 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
 void	frexit(char *str, t_stack **root, char **split, int ec);
+void	print_stack_contents(t_stack *root);
+void	print_stacks(t_stack *a, t_stack *b);
 
 void	frexit(char *str, t_stack **root, char **split, int ec)
 {
@@ -26,19 +28,53 @@ void	frexit(char *str, t_stack **root, char **split, int ec)
 }
 
 // Function to print the stack
-void	print_stack(t_stack *root)
+void	print_stack_contents(t_stack *root)
 {
 	t_stack	*cur;
 
 	cur = root;
+	ft_putstr_fd("index\t\t", 1);
+	ft_putstr_fd("lnum\t\t", 1);
+	ft_putstr_fd("num\n", 1);
 	while (cur)
 	{
 		ft_putnbr_fd(cur->index, 1);
-		ft_putstr_fd("\t", 1);
-		ft_putnbr_fd(cur->lnum, 1);
-		ft_putstr_fd("\t", 1);
+		ft_putstr_fd("\t\t", 1);
+		ft_putlong_fd(cur->lnum, 1);
+		ft_putstr_fd("\t\t", 1);
 		ft_putnbr_fd(cur->num, 1);
 		ft_putstr_fd("\n", 1);
 		cur = cur->next;
 	}
+	ft_putstr_fd("\n", 1);
+}
+
+// Function to print two stacks side by side
+void	print_stacks(t_stack *a, t_stack *b)
+{
+	t_stack	*cur_a;
+	t_stack	*cur_b;
+
+	cur_a = a;
+	cur_b = b;
+	while (cur_a || cur_b)
+	{
+		if (cur_a)
+		{
+			ft_putnbr_fd(cur_a->num, 1);
+			ft_putstr_fd("\t\t", 1);
+			cur_a = cur_a->next;
+		}
+		else
+			ft_putstr_fd("\t\t\t\t\t\t", 1);
+		if (cur_b)
+		{
+			ft_putnbr_fd(cur_b->num, 1);
+			cur_b = cur_b->next;
+		}
+		ft_putstr_fd("\n", 1);
+	}
+	ft_putstr_fd("-------------------------\n", 1);
+	ft_putstr_fd("stack a\t\t", 1);
+	ft_putstr_fd("stack b\n\n", 1);
 }

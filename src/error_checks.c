@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 02:41:02 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/12 05:40:14 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/12 21:52:32 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ void	check_digits_numstr(char *num_str)
 	while (num_str[i])
 	{
 		if (!ft_isdigit(num_str[i]) && num_str[i] != ' ' && num_str[i] != '-')
-			frexit("Error\n", NULL, NULL, 2);
+			frexit("Error in check_digits_numstr\n", NULL, NULL, 2);
+			// frexit("Error\n", NULL, NULL, 2);
 		i++;
 	}
 }
@@ -47,7 +48,8 @@ void	check_digits_argv(char **argv)
 		while (argv[i][j])
 		{
 			if (!ft_isdigit(argv[i][j]) && argv[i][j] != '-')
-				frexit("Error\n", NULL, NULL, 2);
+				frexit("Error in check_digits_argv\n", NULL, NULL, 2);
+				// frexit("Error\n", NULL, NULL, 2);
 			j++;
 		}
 		i++;
@@ -63,7 +65,8 @@ void	avoid_long(t_stack **root)
 	while (cur)
 	{
 		if (cur->lnum > INT_MAX || cur->lnum < INT_MIN)
-			frexit("Error\n", root, NULL, 2);
+			frexit("Error in avoid_long\n", root, NULL, 2);
+			// frexit("Error\n", root, NULL, 2);
 		else
 		{
 			cur->num = (int)cur->lnum;
@@ -85,7 +88,8 @@ void	avoid_duplicates(t_stack **root)
 		while (cur[1])
 		{
 			if (cur[0]->num == cur[1]->num)
-				frexit("Error\n", root, NULL, 2);
+				frexit("Error in avoid_duplicates\n", root, NULL, 2);
+				// frexit("Error\n", root, NULL, 2);
 			cur[1] = cur[1]->next;
 		}
 		cur[0] = cur[0]->next;
@@ -101,7 +105,9 @@ void	check_sorted(t_stack **root)
 	while (cur->next)
 	{
 		if (cur->num > cur->next->num)
-			frexit("Error\n", root, NULL, 2);
+			return ;
 		cur = cur->next;
 	}
+	frexit("Error in check_sorted\n", root, NULL, 2);
+	// frexit("Error\n", root, NULL, 2);
 }

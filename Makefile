@@ -6,14 +6,14 @@
 #    By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/11 14:30:19 by pamatya           #+#    #+#              #
-#    Updated: 2024/07/09 02:57:37 by pamatya          ###   ########.fr        #
+#    Updated: 2024/07/12 22:58:32 by pamatya          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC		=	cc -g
+CC		=	cc
 # CC		=	cc -g -fsanitize=address
 
-CFLAGS	=	-Wall -Wextra -Werror
+CFLAGS	=	-Wall -Wextra -Werror -g
 RM		=	rm -f
 
 NAME	=	push_swap
@@ -26,8 +26,7 @@ EXE_PATH=	.
 
 TEST	=	./src/main.c
 
-# SRCS	=	./src/main.c ./src/errors.c ./src/inputs.c ./src/op_push_swap.c ./src/op_rotate.c ./src/op_rev_rotate.c ./src/utils.c
-SRCS	=	./src/main.c
+SRCS	=	./src/main.c ./src/parsing.c ./src/error_checks.c ./src/list_fns.c ./src/op_rev_rotate.c ./src/utils.c
 
 OBJS	=	$(SRCS:.c=.o)
 
