@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 19:24:05 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/11 01:50:09 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/12 02:39:42 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 
 # include "ft_printf.h"
 # include "get_next_line.h"
-# include "../../inc/push_swap.h"
 
 typedef struct s_list
 {
@@ -43,17 +42,6 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-
-// lib/Libft/ft_list/ft_stack*(): functions added later for push_swap
-t_stack	*ft_stack_new(void *content);
-void	ft_stackadd_front(t_stack **stk, t_stack *new);
-void	ft_stackadd_back(t_stack **stk, t_stack *new);
-void	ft_stackclear(t_stack **stk, void (*del)(void *));
-void	ft_stackdelone(t_stack *stk, void (*del)(void*));
-void	ft_stackiter(t_stack *stk, void (*f)(void *));
-t_stack	*ft_stacklast(t_stack *stk);
-t_stack	*ft_stackmap(t_stack *stk, void *(*f)(void *), void (*del)(void *));
-int		ft_stacksize(t_list *stk);
 
 // lib/Libft/ft_memory
 void	*ft_bzero(void *str, size_t n);

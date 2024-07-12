@@ -26,18 +26,3 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	last = ft_lstlast(*lst);
 	last->next = new;
 }
-
-void	ft_stackadd_back(t_stack **stk, t_stack *new)
-{
-	t_stack	*last;
-
-	if (!stk || !new)
-		return ;
-	if (!*stk)
-	{
-		*stk = new;
-		return ;
-	}
-	last = ft_stacklast(*stk);
-	last->next = new;
-}

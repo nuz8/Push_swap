@@ -22,15 +22,3 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 		lst = lst->next;
 	}
 }
-
-void	ft_stackiter(t_stack *stk, void (*f)(void *))
-{
-	if (!stk || !f)
-		return ;
-	while (stk)
-	{
-		f(stk->num);
-		f(stk->index);
-		stk = stk->next;
-	}
-}

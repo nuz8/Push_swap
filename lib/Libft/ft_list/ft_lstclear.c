@@ -29,21 +29,3 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	}
 	*lst = NULL;
 }
-
-void	ft_stackclear(t_stack **lst, void (*del)(void *))
-{
-	t_stack	*del_node;
-	t_stack	*free_node;
-
-	if (!lst || !del)
-		return ;
-	del_node = *lst;
-	while (del_node)
-	{
-		free_node = del_node;
-		del(del_node);
-		del_node = del_node->next;
-		free(free_node);
-	}
-	*lst = NULL;
-}

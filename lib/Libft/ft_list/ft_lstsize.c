@@ -26,18 +26,3 @@ int	ft_lstsize(t_list *lst)
 	}
 	return (i);
 }
-
-int	ft_stacksize(t_list *stk)
-{
-	int	i;
-
-	if (!stk)
-		return (0);
-	i = 1;
-	while (stk->next != NULL)
-	{
-		i++;
-		stk = stk->next;
-	}
-	return (i);
-}

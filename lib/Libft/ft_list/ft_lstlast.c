@@ -20,12 +20,3 @@ t_list	*ft_lstlast(t_list *lst)
 		lst = lst->next;
 	return (lst);
 }
-
-t_stack	*ft_stacklast(t_stack *stk)
-{
-	if (!stk)
-		return (NULL);
-	while (stk->next)
-		stk = stk->next;
-	return (stk);
-}

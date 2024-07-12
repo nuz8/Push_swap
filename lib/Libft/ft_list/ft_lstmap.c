@@ -32,25 +32,3 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (new_lst);
 }
-
-t_stack	*ft_stackmap(t_stack *stk, void *(*f)(void *), void (*del)(void *))
-{
-	t_stack	*new_stk;
-	t_stack	*node;
-	t_stack	*content;
-
-	if (!stk || !f || !del)
-		return (NULL);
-	new_stk = NULL;
-	while (stk)
-	{
-		content->num = f(stk->num);
-		content->index = f(stk->index);
-		node = ft_stacknew(content);
-		ft_stackadd_back(&new_stk, node);
-		if (!node || !new_stk)
-			return (del(content), ft_stackclear(&new_stk, del), NULL);
-		stk = stk->next;
-	}
-	return (new_stk);
-}

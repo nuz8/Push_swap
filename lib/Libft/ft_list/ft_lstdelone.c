@@ -19,12 +19,3 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*))
 	del((*lst).content);
 	free(lst);
 }
-
-void	ft_stackdelone(t_stack *stk, void (*del)(void*))
-{
-	if (!stk && !del)
-		return ;
-	del(stk->num);
-	del(stk->index);
-	free(stk);
-}
