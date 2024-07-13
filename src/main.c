@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 00:35:36 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/13 04:58:50 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/13 06:02:29 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,11 @@ int	main(int argc, char **argv)
 	if (argc >= 2)
 	{
 		parse_and_handle_errors(&a, argc, argv);
+		// parse_and_handle_errors(&b, argc, argv);
+		
+		print_stacks(a, b);
+		_pb;
+		print_stacks(a, b);
 		_pb;
 		print_stacks(a, b);
 		_pb;
@@ -75,9 +80,11 @@ int	main(int argc, char **argv)
 		print_stacks(a, b);
 		_pa;
 		print_stacks(a, b);
+		_pa;
+		print_stacks(a, b);
+		_pa;
+		print_stacks(a, b);
 	}
-
-
 	return (0);
 }
 

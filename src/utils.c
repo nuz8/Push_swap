@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 00:49:33 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/12 23:07:30 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/13 05:55:36 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,24 +57,29 @@ void	print_stacks(t_stack *a, t_stack *b)
 
 	cur_a = a;
 	cur_b = b;
+	ft_putstr_fd("----------------------------------------\n", 1);
 	while (cur_a || cur_b)
 	{
 		if (cur_a)
 		{
 			ft_putnbr_fd(cur_a->num, 1);
-			ft_putstr_fd("\t\t", 1);
 			cur_a = cur_a->next;
+			ft_putstr_fd("\t\t", 1);
 		}
-		else
-			ft_putstr_fd("\t\t\t\t\t\t", 1);
+		// else
+		// 	ft_putstr_fd("\t\t", 1);
+		ft_putstr_fd("|", 1);
 		if (cur_b)
 		{
+			ft_putstr_fd("\t\t", 1);
 			ft_putnbr_fd(cur_b->num, 1);
 			cur_b = cur_b->next;
 		}
 		ft_putstr_fd("\n", 1);
 	}
-	ft_putstr_fd("-------------------------\n", 1);
-	ft_putstr_fd("stack a\t\t", 1);
-	ft_putstr_fd("stack b\n\n", 1);
+	ft_putstr_fd("----------------------------------------\n", 1);
+	ft_putstr_fd("stack a\t\t|\t\t", 1);
+	ft_putstr_fd("stack b\n", 1);
+	ft_putstr_fd("----------------------------------------\n", 1);
+	ft_putstr_fd("\n", 1);
 }

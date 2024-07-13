@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 00:49:22 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/13 02:34:45 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/13 05:53:14 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,14 @@ void	sa(t_stack **a)
 void	sb(t_stack **b)
 {
 	swap_stack(b);
-	ft_putstr_fd("sb\n", 1);
+	// ft_putstr_fd("sb\n", 1);
+	ft_putstr_fd("\t\t\t\tsb\n", 1);
 }
 
 void	ss(t_stack **a, t_stack **b)
 {
 	swap_stack(a);
 	swap_stack(b);
-	ft_putstr_fd("ss\n", 1);
+	// ft_putstr_fd("ss\n", 1);
+	ft_putstr_fd("\t\tss\n", 1);
 }

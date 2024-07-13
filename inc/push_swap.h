@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 00:36:33 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/13 02:38:21 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/13 06:05:34 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <limits.h>
 
 # define _pa pa(&a, &b)
-# define _pb pb(&b, &a)
+# define _pb pb(&a, &b)
 
 # define _sa sa(&a)
 # define _sb sb(&b)
@@ -31,7 +31,7 @@
 # define _rr rr(&a, &b)
 
 # define _rra rra(&a)
-# define _rrb rra(&b)
+# define _rrb rrb(&b)
 # define _rrr rrr(&a, &b)
 
 typedef struct	s_stack
