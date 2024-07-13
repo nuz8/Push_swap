@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 00:49:22 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/13 00:01:30 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/13 02:34:45 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	swap_stack(t_stack **root)
 	t_stack	*tmp1;
 	t_stack	*tmp2;
 
-	if (!(*root) || !(*root)->next)
+	if (!(*root) || !((*root)->next))
 		return ;
 	tmp1 = *root;
 	tmp2 = (*root)->next;

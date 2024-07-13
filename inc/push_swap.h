@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 00:36:33 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/13 00:00:19 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/13 02:38:21 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <limits.h>
 
 # define _pa pa(&a, &b)
-# define _pb pb(&a, &b)
+# define _pb pb(&b, &a)
 
 # define _sa sa(&a)
 # define _sb sb(&b)
@@ -71,7 +71,9 @@ void	ft_stackfree(t_stack **root);
 // int		ft_stacksize(t_list *stk);
 
 // op_push.c
-
+void	push_stack(t_stack **receiver, t_stack **sender);
+void	pa(t_stack **a, t_stack **b);
+void	pb(t_stack **a, t_stack **b);
 
 // op_swap.c
 void	swap_stack(t_stack **root);

@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 00:35:36 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/12 23:32:08 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/13 04:58:50 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,24 +41,40 @@
 
 int	main(int argc, char **argv)
 {
-	// #define rra rr(&a)
-	// #define rrb rr(&b)
 	t_stack	*a;
-	// t_stack	*b;
+	t_stack	*b;
 
-	// a = NULL;
-	// b = NULL;
+	a = NULL;
+	b = NULL;
 	if (argc < 2)
 		return (1);
 	if (argc >= 2)
 	{
 		parse_and_handle_errors(&a, argc, argv);
-		rr(&a);
-		print_stacks(a, NULL);
+		_pb;
+		print_stacks(a, b);
+		_pb;
+		print_stacks(a, b);
+		_ra;
+		print_stacks(a, b);
+		_rb;
+		print_stacks(a, b);
+		_rr;
+		print_stacks(a, b);
+		_sa;
+		print_stacks(a, b);
+		_sb;
+		print_stacks(a, b);
+		_ss;
+		print_stacks(a, b);
 		_rra;
-		print_stacks(a, NULL);
-		_rra;
-		print_stacks(a, NULL);
+		print_stacks(a, b);
+		_rrb;
+		print_stacks(a, b);
+		_rrr;
+		print_stacks(a, b);
+		_pa;
+		print_stacks(a, b);
 	}
 
 
