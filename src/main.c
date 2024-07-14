@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 00:35:36 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/13 06:02:29 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/14 06:29:43 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,41 @@
 // 	return (0);
 // }
 
+// void	demo(t_stack **a, t_stack **b)
+// {
+// 	print_stacks(a, b);
+// 		pb(a, b);
+// 		print_stacks(a, b);
+// 		pb(a, b);
+// 		print_stacks(a, b);
+// 		pb(a, b);
+// 		print_stacks(a, b);
+// 		ra(a);
+// 		print_stacks(a, b);
+// 		rb(b);
+// 		print_stacks(a, b);
+// 		rr(a, b);
+// 		print_stacks(a, b);
+// 		sa(a);
+// 		print_stacks(a, b);
+// 		sb(b);
+// 		print_stacks(a, b);
+// 		ss(a, b);
+// 		print_stacks(a, b);
+// 		rra(a);
+// 		print_stacks(a, b);
+// 		rrb(b);
+// 		print_stacks(a, b);
+// 		rrr(a, b);
+// 		print_stacks(a, b);
+// 		pa(a, b);
+// 		print_stacks(a, b);
+// 		pa(a, b);
+// 		print_stacks(a, b);
+// 		pa(a, b);
+// 		print_stacks(a, b);
+// }
+
 int	main(int argc, char **argv)
 {
 	t_stack	*a;
@@ -52,39 +87,14 @@ int	main(int argc, char **argv)
 	{
 		parse_and_handle_errors(&a, argc, argv);
 		// parse_and_handle_errors(&b, argc, argv);
+		// demo(&a, &b);
+		print_stacks(a, b);
+		start_sorting(&a, &b);
+		print_stacks(a, b);
 		
-		print_stacks(a, b);
-		_pb;
-		print_stacks(a, b);
-		_pb;
-		print_stacks(a, b);
-		_pb;
-		print_stacks(a, b);
-		_ra;
-		print_stacks(a, b);
-		_rb;
-		print_stacks(a, b);
-		_rr;
-		print_stacks(a, b);
-		_sa;
-		print_stacks(a, b);
-		_sb;
-		print_stacks(a, b);
-		_ss;
-		print_stacks(a, b);
-		_rra;
-		print_stacks(a, b);
-		_rrb;
-		print_stacks(a, b);
-		_rrr;
-		print_stacks(a, b);
-		_pa;
-		print_stacks(a, b);
-		_pa;
-		print_stacks(a, b);
-		_pa;
-		print_stacks(a, b);
 	}
+	ft_stack_free(&a);
+	ft_stack_free(&b);
 	return (0);
 }
 

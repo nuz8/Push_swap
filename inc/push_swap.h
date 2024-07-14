@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 00:36:33 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/13 06:05:34 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/14 06:30:25 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,9 @@ void	check_sorted(t_stack **root);
 t_stack	*ft_stack_new(long lnum);
 t_stack	*ft_stack_last(t_stack *stk);
 void	ft_stack_addback(t_stack **root, t_stack *new);
-void	ft_stackfree(t_stack **root);
+void	ft_stack_free(t_stack **root);
+int		ft_stack_size(t_stack *root);
+void	ft_stack_minmax(t_stack *root, int *minmax);
 
 // void	ft_stackadd_front(t_stack **stk, t_stack *new);
 // void	ft_stackclear(t_stack **stk, void (*del)(void *));
@@ -68,7 +70,6 @@ void	ft_stackfree(t_stack **root);
 // void	ft_stackiter(t_stack *stk, void (*f)(void *));
 // t_stack	*ft_stack_last(t_stack *stk);
 // t_stack	*ft_stackmap(t_stack *stk, void *(*f)(void *), void (*del)(void *));
-// int		ft_stacksize(t_list *stk);
 
 // op_push.c
 void	push_stack(t_stack **receiver, t_stack **sender);
@@ -92,6 +93,12 @@ void	rev_rotate_stack(t_stack **root);
 void	rra(t_stack **a);
 void	rrb(t_stack **b);
 void	rrr(t_stack **a, t_stack **b);
+
+// algorithm.c
+void	start_sorting(t_stack **a, t_stack **b);
+// void	start_sorting(t_stack **a);
+void	sort_three(t_stack **a);
+void	sort_five(t_stack **a, t_stack **b, int list_size);
 
 // utils.c
 void	frexit(char *str, t_stack **root, char **split, int ec);

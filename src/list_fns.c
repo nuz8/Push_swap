@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 00:52:33 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/12 19:34:31 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/14 06:31:47 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 t_stack	*ft_stack_new(long lnum);
 t_stack	*ft_stack_last(t_stack *stk);
 void	ft_stack_addback(t_stack **root, t_stack *new);
-void	ft_stackfree(t_stack **root);
+void	ft_stack_free(t_stack **root);
+int		ft_stack_size(t_stack *root);
+void	ft_stack_minmax(t_stack *root, int *minmax);
 
 // Used functions from list-manipulations for stack
 
@@ -57,7 +59,7 @@ void	ft_stack_addback(t_stack **root, t_stack *new)
 	last->next = new;
 }
 
-void	ft_stackfree(t_stack **root)
+void	ft_stack_free(t_stack **root)
 {
 	t_stack	*del_node;
 	t_stack	*free_node;
@@ -74,6 +76,34 @@ void	ft_stackfree(t_stack **root)
 	*root = NULL;
 }
 
+int	ft_stack_size(t_stack *root)
+{
+	int	i;
+
+	if (!root)
+		return (0);
+	i = 1;
+	while (root->next != NULL)
+	{
+		i++;
+		root = root->next;
+	}
+	return (i);
+}
+
+void	ft_stack_minmax(t_stack *root, int *minmax)
+{
+	minmax[0] = root->num;
+	minmax[1] = root->num;
+	while (root)
+	{
+		if (root->num < minmax[0])
+			minmax[0] = root->num;
+		if (root->num > minmax[1])
+			minmax[1] = root->num;
+		root = root->next;
+	}
+}
 
 /* ************************************************************************** */
 
@@ -151,17 +181,3 @@ void	ft_stackfree(t_stack **root)
 // 	return (new_stk);
 // }
 
-// int	ft_stacksize(t_list *stk)
-// {
-// 	int	i;
-
-// 	if (!stk)
-// 		return (0);
-// 	i = 1;
-// 	while (stk->next != NULL)
-// 	{
-// 		i++;
-// 		stk = stk->next;
-// 	}
-// 	return (i);
-// }
