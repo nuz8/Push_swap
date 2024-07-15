@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 00:36:33 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/15 04:31:03 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/15 07:42:29 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,28 +19,36 @@
 # include <unistd.h>
 # include <limits.h>
 
-# define _pa pa(&a, &b)
-# define _pb pb(&a, &b)
+// # define _pa pa(&a, &b)
+// # define _pb pb(&a, &b)
 
-# define _sa sa(&a)
-# define _sb sb(&b)
-# define _ss ss(&a, &b)
+// # define _sa sa(&a)
+// # define _sb sb(&b)
+// # define _ss ss(&a, &b)
 
-# define _ra ra(&a)
-# define _rb rb(&b)
-# define _rr rr(&a, &b)
+// # define _ra ra(&a)
+// # define _rb rb(&b)
+// # define _rr rr(&a, &b)
 
-# define _rra rra(&a)
-# define _rrb rrb(&b)
-# define _rrr rrr(&a, &b)
+// # define _rra rra(&a)
+// # define _rrb rrb(&b)
+// # define _rrr rrr(&a, &b)
 
-typedef struct	s_stack
+typedef struct s_stack
 {
 	int				index;
 	long			lnum;
 	int				num;
 	struct s_stack	*next;
 }				t_stack;
+
+typedef struct s_puswap
+{
+	t_stack	a;
+	t_stack	b;
+	int		list_size;
+	int		minmax[2];
+}				t_puswap;
 
 
 // parsing.c
@@ -95,8 +103,8 @@ void	rrb(t_stack **b);
 void	rrr(t_stack **a, t_stack **b);
 
 // index.c
-// void	index_list(t_stack **root);
-void	index_list(t_stack **root, int *minmax, int list_size);
+void	index_list(t_stack **root, int list_size);
+// void	index_list(t_stack **root, int *minmax, int list_size);
 
 // algorithm.c
 void	start_sorting(t_stack **a, t_stack **b);

@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 22:57:23 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/15 06:37:56 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/15 07:37:58 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,12 @@ void	execute_rotation(t_stack **a, int *cost);
 void	start_sorting(t_stack **a, t_stack **b)
 {
 	int		list_size;
-	int		minmax[2];
+	// int		minmax[2];
 
 	list_size = ft_stack_size(*a);
-	ft_stack_minmax(*a, minmax);
-	index_list(a, minmax, list_size);
+	// ft_stack_minmax(*a, minmax);
+	// index_list(a, minmax, list_size);
+	index_list(a, list_size);
 	if (list_size == 1)
 		exit(0) ;
 	else if (list_size == 2)
