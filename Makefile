@@ -6,7 +6,7 @@
 #    By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/11 14:30:19 by pamatya           #+#    #+#              #
-#    Updated: 2024/07/14 05:13:44 by pamatya          ###   ########.fr        #
+#    Updated: 2024/07/15 01:25:21 by pamatya          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,9 @@ EXE_PATH=	.
 
 TEST	=	./src/main.c
 
-SRCS	=	./src/main.c ./src/parsing.c ./src/error_checks.c ./src/list_fns.c ./src/op_push.c ./src/op_swap.c ./src/op_rotate.c ./src/op_rev_rotate.c ./src/algorithm.c ./src/utils.c
+SRCS	=	./src/main.c ./src/parsing.c ./src/error_checks.c ./src/list_fns.c \
+			./src/op_push.c ./src/op_swap.c ./src/op_rotate.c ./src/op_rev_rotate.c \
+			./src/index.c ./src/algorithm.c ./src/utils.c
 
 OBJS	=	$(SRCS:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 18:30:29 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/14 06:35:15 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/15 03:46:18 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@ long	ft_atol(const char *str);
 // Function to check for errors
 void	parse_and_handle_errors(t_stack **root, int argc, char **argv)
 {
+	int	minmax[2];
+	int	list_size;
+	
 	if (argc == 2)
 	{
 		check_digits_numstr(argv[1]);
@@ -33,6 +36,10 @@ void	parse_and_handle_errors(t_stack **root, int argc, char **argv)
 	avoid_long(root);
 	avoid_duplicates(root);
 	check_sorted(root);
+
+	list_size = ft_stack_size(*root);
+	ft_stack_minmax(*root, minmax);
+	index_list(root, minmax, list_size);
 	print_stack_contents(*root);
 	
 }
@@ -59,7 +66,7 @@ void	parse_numstr(t_stack **root, char *num_str)
 			ft_stack_addback(root, cur);
 		}
 		else
-			frexit("Error: in parse_numstr\n", root, split, 2);
+			frexit("Error: from parse_numstr\n", root, split, 2);
 			// frexit("Error\n", root, split, 2);
 		i++;
 	}
@@ -79,11 +86,11 @@ void	parse_nums(t_stack **root, char **argv)
 		{
 			cur = ft_stack_new(ft_atol(argv[i]));
 			if (!cur)
-				frexit("Error malloc'ing node\n", root, NULL, 3);
+				frexit("EError: node malloc\n", root, NULL, 3);
 			ft_stack_addback(root, cur);
 		}
 		else
-			frexit("Error: in parse_nums\n", root, NULL, 2);
+			frexit("Error: from parse_nums\n", root, NULL, 2);
 			// frexit("Error\n", root, NULL, 2);
 		i++;
 	}

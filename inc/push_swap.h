@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 00:36:33 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/14 06:30:25 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/15 03:33:02 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,10 @@ void	rev_rotate_stack(t_stack **root);
 void	rra(t_stack **a);
 void	rrb(t_stack **b);
 void	rrr(t_stack **a, t_stack **b);
+
+// index.c
+// void	index_list(t_stack **root);
+void	index_list(t_stack **root, int *minmax, int list_size);
 
 // algorithm.c
 void	start_sorting(t_stack **a, t_stack **b);

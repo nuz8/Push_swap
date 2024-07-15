@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 22:57:23 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/14 07:17:11 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/14 23:54:41 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	sort_five(t_stack **a, t_stack **b, int list_size);
 void	get_next_min(t_stack **a, int min);
 void	execute_rotation(t_stack **a, int *cost);
 
-// void	start_sorting(t_stack **a)
+// Function to select and execute the sorting algorithm based on the size of the list
 void	start_sorting(t_stack **a, t_stack **b)
 {
 	int		list_size;
@@ -30,13 +30,13 @@ void	start_sorting(t_stack **a, t_stack **b)
 		sa(a);	
 	else if (list_size == 3)
 		sort_three(a);
-		// sort_three(a, list_size);
 	else if (list_size <= 5)
 		sort_five(a, b, list_size);
 	// else
 	// 	radix_sort(a, b, list_size);
 }
 
+// Function to sort three numbers
 void	sort_three(t_stack **a)
 {
 	int	first;
@@ -48,8 +48,6 @@ void	sort_three(t_stack **a)
 	second = (*a)->next->num;
 	third = (*a)->next->next->num;
 	ft_stack_minmax(*a, minmax);
-	// ft_printf("minmax[0]: %d\n", minmax[0]);
-	// ft_printf("minmax[1]: %d\n", minmax[1]);
 	if (minmax[1] == third)
 		sa(a);
 	else if (minmax[1] == second && minmax[0] == third)
@@ -68,6 +66,7 @@ void	sort_three(t_stack **a)
 		ra(a);
 }
 
+// Function to sort five numbers using sort_three function
 void	sort_five(t_stack **a, t_stack **b, int list_size)
 {
 	int	minmax[2];
@@ -77,11 +76,8 @@ void	sort_five(t_stack **a, t_stack **b, int list_size)
 	while (i < (list_size - 3))
 	{
 		ft_stack_minmax(*a, minmax);
-		// while(*a && (*a)->num != minmax[0])
-		// 	ra(a);
 		if ((*a)->num != minmax[0])
 			get_next_min(a, minmax[0]);
-		// if ((*a)->num == minmax[0])
 		pb(a, b);
 		i++;
 	}
@@ -120,6 +116,7 @@ void	get_next_min(t_stack **a, int min)
 	execute_rotation(a, cost);
 }
 
+// Function to execute actual rotation based on total cost
 void	execute_rotation(t_stack **a, int *cost)
 {
 	int	i;
@@ -138,23 +135,3 @@ void	execute_rotation(t_stack **a, int *cost)
 			rra(a);
 	}
 }
-
-// void	sort_five(t_stack **a, t_stack **b, int list_size)
-// {
-// 	int	minmax[2];
-// 	int	i;
-
-// 	i = 0;
-// 	while (i < 2)
-// 	{
-// 		ft_stack_minmax(*a, &minmax);
-// 		if ((*a)->lnum == minmax[1] || (*a)->lnum == minmax[0])
-// 			pb(a, b);
-// 		else
-// 			ra(a);
-// 		i++;
-// 	}
-// 	sort_three(a, list_size - 2);
-// 	pa(a, b);
-// 	pa(a, b);
-// }
