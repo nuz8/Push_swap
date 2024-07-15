@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 00:36:33 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/15 07:42:29 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/16 01:27:49 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ typedef struct s_puswap
 	t_stack	b;
 	int		list_size;
 	int		minmax[2];
+	int		total_moves;
 }				t_puswap;
 
 
@@ -104,13 +105,17 @@ void	rrr(t_stack **a, t_stack **b);
 
 // index.c
 void	index_list(t_stack **root, int list_size);
-// void	index_list(t_stack **root, int *minmax, int list_size);
 
-// algorithm.c
+// sorting.c
 void	start_sorting(t_stack **a, t_stack **b);
-// void	start_sorting(t_stack **a);
 void	sort_three(t_stack **a);
 void	sort_five(t_stack **a, t_stack **b, int list_size);
+void	get_next_min(t_stack **a, int min);
+void	execute_rotation(t_stack **a, int *cost);
+
+// algorithm.c
+void	radix_sort(t_stack **a, t_stack **b, int list_size);
+int		get_bits(int list_size);
 
 // utils.c
 void	frexit(char *str, t_stack **root, char **split, int ec);
