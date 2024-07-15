@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 00:35:36 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/14 06:29:43 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/15 06:35:08 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,10 +88,11 @@ int	main(int argc, char **argv)
 		parse_and_handle_errors(&a, argc, argv);
 		// parse_and_handle_errors(&b, argc, argv);
 		// demo(&a, &b);
+		print_stack_contents(a);
 		print_stacks(a, b);
 		start_sorting(&a, &b);
 		print_stacks(a, b);
-		
+		print_stack_contents(a);
 	}
 	ft_stack_free(&a);
 	ft_stack_free(&b);

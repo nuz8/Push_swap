@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 22:57:23 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/14 23:54:41 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/15 06:37:56 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,11 @@ void	execute_rotation(t_stack **a, int *cost);
 void	start_sorting(t_stack **a, t_stack **b)
 {
 	int		list_size;
+	int		minmax[2];
 
 	list_size = ft_stack_size(*a);
+	ft_stack_minmax(*a, minmax);
+	index_list(a, minmax, list_size);
 	if (list_size == 1)
 		exit(0) ;
 	else if (list_size == 2)
@@ -39,25 +42,25 @@ void	start_sorting(t_stack **a, t_stack **b)
 // Function to sort three numbers
 void	sort_three(t_stack **a)
 {
-	int	first;
-	int	second;
-	int	third;
+	int	elem[3];
 	int	minmax[2];
 
-	first = (*a)->num;
-	second = (*a)->next->num;
-	third = (*a)->next->next->num;
+	elem[0] = (*a)->num;
+	elem[1] = (*a)->next->num;
+	elem[2] = (*a)->next->next->num;
 	ft_stack_minmax(*a, minmax);
-	if (minmax[1] == third)
+	if (is_sorted(a))
+		return ;
+	else if (minmax[1] == elem[2])
 		sa(a);
-	else if (minmax[1] == second && minmax[0] == third)
+	else if (minmax[1] == elem[1] && minmax[0] == elem[2])
 		rra(a);
-	else if (minmax[1] == second && minmax[0] == first)
+	else if (minmax[1] == elem[1] && minmax[0] == elem[0])
 	{
 		rra(a);
 		sa(a);
 	}
-	else if (minmax[1] == first && minmax[0] == third)
+	else if (minmax[1] == elem[0] && minmax[0] == elem[2])
 	{
 		ra(a);
 		sa(a);
@@ -78,6 +81,8 @@ void	sort_five(t_stack **a, t_stack **b, int list_size)
 		ft_stack_minmax(*a, minmax);
 		if ((*a)->num != minmax[0])
 			get_next_min(a, minmax[0]);
+		if (is_sorted(a) && !*b)
+			return ;
 		pb(a, b);
 		i++;
 	}

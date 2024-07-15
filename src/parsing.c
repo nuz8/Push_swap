@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 18:30:29 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/15 03:46:18 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/15 04:42:00 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,6 @@ long	ft_atol(const char *str);
 // Function to check for errors
 void	parse_and_handle_errors(t_stack **root, int argc, char **argv)
 {
-	int	minmax[2];
-	int	list_size;
-	
 	if (argc == 2)
 	{
 		check_digits_numstr(argv[1]);
@@ -35,13 +32,9 @@ void	parse_and_handle_errors(t_stack **root, int argc, char **argv)
 	}
 	avoid_long(root);
 	avoid_duplicates(root);
-	check_sorted(root);
-
-	list_size = ft_stack_size(*root);
-	ft_stack_minmax(*root, minmax);
-	index_list(root, minmax, list_size);
-	print_stack_contents(*root);
-	
+	if (is_sorted(root))
+		frexit("Error in check_sorted\n", root, NULL, 2);
+		// frexit("Error\n", root, NULL, 2);
 }
 
 // Function to parse the input string when argc =2, and create a linked list of integers
