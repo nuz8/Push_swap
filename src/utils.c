@@ -6,22 +6,26 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 00:49:33 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/15 22:57:07 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/16 07:31:15 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void	frexit(char *str, t_stack **root, char **split, int ec);
-void	print_stack_contents(t_stack *root);
-void	print_stacks(t_stack *a, t_stack *b);
+// void	frexit(char *str, t_stack **root, char **split, int ec);
+// void	print_stack_contents(t_stack *root);
+// void	print_stacks(t_stack *a, t_stack *b);
 
-void	frexit(char *str, t_stack **root, char **split, int ec)
+void	frexit(char *str, t_puswap *ps, char **split, int ec);
+void	print_stack_contents(t_stack *root);
+void	print_stacks(t_puswap *ps);
+
+void	frexit(char *str, t_puswap *ps, char **split, int ec)
 {
 	if (str)
 		ft_putstr_fd(str, 2);
-	if (root)
-		ft_stack_free(root);
+	if (ps->a)
+		ft_stack_free(&(ps->a));
 	if (split)
 		ft_free2d(split);
 	exit(ec);
@@ -53,13 +57,13 @@ void	print_stack_contents(t_stack *root)
 }
 
 // Function to print two stacks side by side
-void	print_stacks(t_stack *a, t_stack *b)
+void	print_stacks(t_puswap *ps)
 {
 	t_stack	*cur_a;
 	t_stack	*cur_b;
 
-	cur_a = a;
-	cur_b = b;
+	cur_a = ps->a;
+	cur_b = ps->b;
 	ft_putstr_fd("========================================\n", 2);
 	while (cur_a || cur_b)
 	{

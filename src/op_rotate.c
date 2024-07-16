@@ -6,16 +6,21 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 00:49:33 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/14 07:15:07 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/16 04:17:59 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
+// void	rotate_stack(t_stack **root);
+// void	ra(t_stack **a);
+// void	rb(t_stack **b);
+// void	rr(t_stack **a, t_stack **b);
+
 void	rotate_stack(t_stack **root);
-void	ra(t_stack **a);
-void	rb(t_stack **b);
-void	rr(t_stack **a, t_stack **b);
+void	ra(t_puswap *ps);
+void	rb(t_puswap *ps);
+void	rr(t_puswap *ps);
 
 // Function to rotate a stack
 void	rotate_stack(t_stack **root)
@@ -32,23 +37,23 @@ void	rotate_stack(t_stack **root)
 	first->next = NULL;
 }
 
-void	ra(t_stack **a)
+void	ra(t_puswap *ps)
 {
-	rotate_stack(a);
+	rotate_stack(&(ps->a));
 	ft_putstr_fd("ra\n", 1);
 }
 
-void	rb(t_stack **b)
+void	rb(t_puswap *ps)
 {
-	rotate_stack(b);
+	rotate_stack(&(ps->b));
 	// ft_putstr_fd("rb\n", 1);
 	ft_putstr_fd("\t\t\t\trb\n", 1);
 }
 
-void	rr(t_stack **a, t_stack **b)
+void	rr(t_puswap *ps)
 {
-	rotate_stack(a);
-	rotate_stack(b);
+	rotate_stack(&(ps->a));
+	rotate_stack(&(ps->b));
 	// ft_putstr_fd("rr\n", 1);
 	ft_putstr_fd("\t\trr\n", 1);
 }

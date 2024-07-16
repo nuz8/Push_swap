@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 00:52:33 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/16 01:26:52 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/16 08:06:22 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ t_stack	*ft_stack_last(t_stack *stk);
 void	ft_stack_addback(t_stack **root, t_stack *new);
 void	ft_stack_free(t_stack **root);
 int		ft_stack_size(t_stack *root);
-void	ft_stack_minmax(t_stack *root, int *minmax);
+// void	ft_stack_minmax(t_stack *root, int *minmax);
+void	ft_stack_minmax(t_puswap *ps);
 
 // Used functions from list-manipulations for stack
 
@@ -91,17 +92,21 @@ int	ft_stack_size(t_stack *root)
 	return (i);
 }
 
-void	ft_stack_minmax(t_stack *root, int *minmax)
+// void	ft_stack_minmax(t_stack *root, int *minmax)
+void	ft_stack_minmax(t_puswap *ps)
 {
-	minmax[0] = root->num;
-	minmax[1] = root->num;
-	while (root)
+	t_stack	*cur;
+	
+	ps->minmax[0] = ps->a->num;
+	ps->minmax[1] = ps->a->num;
+	cur = ps->a;
+	while (cur)
 	{
-		if (root->num < minmax[0])
-			minmax[0] = root->num;
-		if (root->num > minmax[1])
-			minmax[1] = root->num;
-		root = root->next;
+		if (cur->num < ps->minmax[0])
+			ps->minmax[0] = cur->num;
+		if (cur->num > ps->minmax[1])
+			ps->minmax[1] = cur->num;
+		cur = cur->next;
 	}
 }
 

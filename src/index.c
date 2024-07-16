@@ -6,16 +6,37 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/14 23:24:28 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/15 21:14:09 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/16 07:11:19 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void			index_list(t_stack **root, int list_size);
-static t_stack	*get_nxtmin_node(t_stack *cur, int min, int new_max, int index);
+// void			index_list(t_stack **root, int list_size);
+void	index_list(t_puswap *ps);
+t_stack	*get_nxtmin_node(t_stack *cur, int min, int new_max, int index);
 
-static t_stack	*get_nxtmin_node(t_stack *cur, int min, int new_max, int index)
+void	index_list(t_puswap *ps)
+{
+	t_stack	*cur;
+	t_stack	*nxtmin_node;
+	int		index;
+	// int		minmax[2];
+	int		new_min;
+
+	index = 0;
+	new_min = ps->minmax[0];
+	// ft_stack_minmax(*root, minmax);
+	while (index < ps->list_size)
+	{
+		cur = ps->a;
+		nxtmin_node = get_nxtmin_node(cur, new_min, ps->minmax[1], index);
+		new_min = nxtmin_node->num;
+		nxtmin_node->index = index++;
+	}
+}
+
+t_stack	*get_nxtmin_node(t_stack *cur, int min, int new_max, int index)
 {
 	t_stack	*nxtmin_node;
 	
@@ -36,22 +57,4 @@ static t_stack	*get_nxtmin_node(t_stack *cur, int min, int new_max, int index)
 		cur = cur->next;
 	}
 	return (nxtmin_node);
-}
-
-void	index_list(t_stack **root, int list_size)
-{
-	t_stack	*cur;
-	t_stack	*nxtmin_node;
-	int		index;
-	int		minmax[2];
-
-	index = 0;
-	ft_stack_minmax(*root, minmax);
-	while (index < list_size)
-	{
-		cur = *root;
-		nxtmin_node = get_nxtmin_node(cur, minmax[0], minmax[1], index);
-		minmax[0] = nxtmin_node->num;
-		nxtmin_node->index = index++;
-	}
 }

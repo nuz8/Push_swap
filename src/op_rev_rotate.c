@@ -6,16 +6,21 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 00:49:30 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/14 07:15:18 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/16 04:19:49 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
+// void	rev_rotate_stack(t_stack **root);
+// void	rra(t_stack **a);
+// void	rrb(t_stack **b);
+// void	rrr(t_stack **a, t_stack **b);
+
 void	rev_rotate_stack(t_stack **root);
-void	rra(t_stack **a);
-void	rrb(t_stack **b);
-void	rrr(t_stack **a, t_stack **b);
+void	rra(t_puswap *ps);
+void	rrb(t_puswap *ps);
+void	rrr(t_puswap *ps);
 
 // Function to reverse rotate a stack
 void	rev_rotate_stack(t_stack **root)
@@ -34,23 +39,23 @@ void	rev_rotate_stack(t_stack **root)
 	*root = last;
 }
 
-void	rra(t_stack **a)
+void	rra(t_puswap *ps)
 {
-	rev_rotate_stack(a);
+	rev_rotate_stack(&(ps->a));
 	ft_putstr_fd("rra\n", 1);
 }
 
-void	rrb(t_stack **b)
+void	rrb(t_puswap *ps)
 {
-	rev_rotate_stack(b);
+	rev_rotate_stack(&(ps->b));
 	// ft_putstr_fd("rrb\n", 1);
 	ft_putstr_fd("\t\t\t\trrb\n", 1);
 }
 
-void	rrr(t_stack **a, t_stack **b)
+void	rrr(t_puswap *ps)
 {
-	rev_rotate_stack(a);
-	rev_rotate_stack(b);
+	rev_rotate_stack(&(ps->a));
+	rev_rotate_stack(&(ps->b));
 	// ft_putstr_fd("rrr\n", 1);
 	ft_putstr_fd("\t\trrr\n", 1);
 }
