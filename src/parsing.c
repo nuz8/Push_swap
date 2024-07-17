@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 18:30:29 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/16 06:24:25 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/17 02:24:18 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ void	parse_and_handle_errors(t_puswap *ps, int argc, char **argv)
 	avoid_long(ps);
 	avoid_duplicates(ps);
 	if (is_sorted(ps->a))
-		frexit("Error in check_sorted\n", ps, NULL, 2);
-		// frexit("Error\n", ps, NULL, 2);
+		frexit(NULL, ps, NULL, 1);
+		// frexit("Error in check_sorted\n", ps, NULL, 2);
 }
 
 // Function to parse the input string when argc =2, and create a linked list of integers

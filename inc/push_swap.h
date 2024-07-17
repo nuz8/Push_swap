@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 00:36:33 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/16 07:39:05 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/17 00:35:59 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,8 @@ void	ft_stack_free(t_stack **root);
 int		ft_stack_size(t_stack *root);
 // void	ft_stack_minmax(t_stack *root, int *minmax[2]);
 void	ft_stack_minmax(t_puswap *ps);
+int		ft_stack_min(t_stack *root);
+int		ft_stack_max(t_stack *root);
 
 // void	ft_stackadd_front(t_stack **stk, t_stack *new);
 // void	ft_stackclear(t_stack **stk, void (*del)(void *));
@@ -124,7 +126,7 @@ t_stack	*get_nxtmin_node(t_stack *cur, int min, int new_max, int index);
 void	start_sorting(t_puswap *ps);
 void	sort_three(t_puswap *ps);
 void	sort_five(t_puswap *ps);
-void	get_next_min(t_puswap *ps);
+void	get_next_min(t_puswap *ps, int new_min);
 void	execute_rotation(t_puswap *ps, int *cost);
 
 // algorithm.c
