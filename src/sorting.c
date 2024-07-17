@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 22:57:23 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/17 01:22:44 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/17 05:26:23 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,12 +85,13 @@ void	sort_five(t_puswap *ps)
 	// int	minmax[2];
 
 	i = 0;
-	while (i < (ps->list_size - 3))
+	while (i < 2)
 	{
 		new_min = ft_stack_min(ps->a);
 		if (ps->a->num != ps->minmax[0])
 			get_next_min(ps, new_min);
-		if (is_sorted(ps->a) && !(ps->b))
+		// if (is_sorted(ps->a) && !(ps->b))
+		if (is_sorted(ps->a) && ft_stack_size(ps->a) == ps->list_size)
 			return ;
 		pb(ps);
 		i++;
@@ -98,8 +99,9 @@ void	sort_five(t_puswap *ps)
 	// minmax[0] = ft_stack_min(ps->a);
 	// minmax[1] = ft_stack_max(ps->a);
 	sort_three(ps);
-	i = 0;
-	while (i++ < (ps->list_size - 3))
+	// i = 0;
+	// while (i++ < (ps->list_size - 3))
+	while (i--)
 		pa(ps);
 }
 

@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 00:36:33 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/17 00:35:59 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/17 04:11:58 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,6 +133,7 @@ void	execute_rotation(t_puswap *ps, int *cost);
 // void	radix_sort(t_stack **a, t_stack **b, int list_size);
 void	radix_sort(t_puswap *ps);
 int		get_bits(int list_size);
+int		ft_power(int base, int exp);
 
 // utils.c
 // void	frexit(char *str, t_stack **root, char **split, int ec);

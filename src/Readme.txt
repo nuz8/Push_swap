@@ -14,3 +14,5 @@ like not-int (>max_int), and duplicate values.
 
 Exit (3) when the program exits due to other errors like 
 failure in memory allocations, etc.
+
+7 10 6 1 8 9 3 2 4 5

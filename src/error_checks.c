@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 02:41:02 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/16 06:22:23 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/17 04:04:25 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,6 +111,21 @@ int	is_sorted(t_stack *root)
 	while (cur->next)
 	{
 		if (cur->num > cur->next->num)
+			return (0);
+		cur = cur->next;
+	}
+	return (1);
+}
+
+// Function to check if stack b is descending
+int	is_descending(t_stack *stk_b)
+{
+	t_stack	*cur;
+
+	cur = stk_b;
+	while (cur->next)
+	{
+		if (cur->num < cur->next->num)
 			return (0);
 		cur = cur->next;
 	}
