@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 00:49:33 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/16 07:31:15 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/18 23:56:40 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ void	frexit(char *str, t_puswap *ps, char **split, int ec)
 		ft_stack_free(&(ps->a));
 	if (split)
 		ft_free2d(split);
+	if (ps)
+		free(ps);
 	exit(ec);
 }
 

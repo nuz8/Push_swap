@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 00:36:33 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/17 04:11:58 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/19 04:15:07 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,14 +62,15 @@ void	parse_nums(t_puswap *ps, char **argv);
 long	ft_atol(const char *str);
 
 // error_checks.c
-void	check_digits_numstr(char *num_str);
-void	check_digits_argv(char **argv);
+void	check_digits_numstr(t_puswap *ps, char *num_str);
+void	check_digits_argv(t_puswap *ps, char **argv);
 // void	avoid_long(t_stack **root);
 // void	avoid_duplicates(t_stack **root);
 // int		is_sorted(t_stack **root);
 void	avoid_long(t_puswap *ps);
 void	avoid_duplicates(t_puswap *ps);
 int		is_sorted(t_stack *root);
+int		is_descending(t_stack *stk_b);
 
 // list_fns.c: functions adapted from libft
 t_stack	*ft_stack_new(long lnum);

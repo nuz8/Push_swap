@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 18:30:29 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/17 02:47:15 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/19 00:05:47 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@ void	parse_and_handle_errors(t_puswap *ps, int argc, char **argv)
 {
 	if (argc == 2)
 	{
-		check_digits_numstr(argv[1]);
+		check_digits_numstr(ps, argv[1]);
 		parse_numstr(ps, argv[1]);
 	}
 	else
 	{
-		check_digits_argv(argv);
+		check_digits_argv(ps, argv);
 		parse_nums(ps, argv);
 	}
 	avoid_long(ps);
@@ -53,7 +53,7 @@ void	parse_numstr(t_puswap *ps, char *num_str)
 
 	split = ft_split(num_str, ' ');
 	if(!split)
-		frexit("Error: split\n", NULL, NULL, 3);
+		frexit("Error: split\n", ps, NULL, 3);
 		// frexit("Error\n", NULL, NULL, 3);
 	i = 0;
 	while (split[i])
