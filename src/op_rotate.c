@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 00:49:33 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/17 02:01:59 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/19 09:23:50 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	ra(t_puswap *ps)
 	rotate_stack(&(ps->a));
 	ft_putstr_fd("ra\n", 1);
 	ps->total_moves++;
-	// print_stacks(ps);
+	print_stacks(ps);
 }
 
 void	rb(t_puswap *ps)
@@ -51,7 +51,7 @@ void	rb(t_puswap *ps)
 	ft_putstr_fd("rb\n", 1);
 	// ft_putstr_fd("\t\t\t\trb\n", 1);
 	ps->total_moves++;
-	// print_stacks(ps);
+	print_stacks(ps);
 }
 
 void	rr(t_puswap *ps)
@@ -61,5 +61,5 @@ void	rr(t_puswap *ps)
 	ft_putstr_fd("rr\n", 1);
 	// ft_putstr_fd("\t\trr\n", 1);
 	ps->total_moves++;
-	// print_stacks(ps);
+	print_stacks(ps);
 }
