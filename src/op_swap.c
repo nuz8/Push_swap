@@ -6,23 +6,17 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 00:49:22 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/19 09:23:58 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/20 06:14:22 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
-
-// void	swap_stack(t_stack **root);
-// void	sa(t_stack **a);
-// void	sb(t_stack **b);
-// void	ss(t_stack **a, t_stack **b);
 
 void	swap_stack(t_stack **root);
 void	sa(t_puswap *ps);
 void	sb(t_puswap *ps);
 void	ss(t_puswap *ps);
 
-// Function to swap the first two elements of a stack
 void	swap_stack(t_stack **root)
 {
 	t_stack	*tmp1;
@@ -42,16 +36,13 @@ void	sa(t_puswap *ps)
 	swap_stack(&(ps->a));
 	ft_putstr_fd("sa\n", 1);
 	ps->total_moves++;
-	print_stacks(ps);
 }
 
 void	sb(t_puswap *ps)
 {
 	swap_stack(&(ps->b));
 	ft_putstr_fd("sb\n", 1);
-	// ft_putstr_fd("\t\t\t\tsb\n", 1);
 	ps->total_moves++;
-	print_stacks(ps);
 }
 
 void	ss(t_puswap *ps)
@@ -59,7 +50,5 @@ void	ss(t_puswap *ps)
 	swap_stack(&(ps->a));
 	swap_stack(&(ps->b));
 	ft_putstr_fd("ss\n", 1);
-	// ft_putstr_fd("\t\tss\n", 1);
 	ps->total_moves++;
-	print_stacks(ps);
 }

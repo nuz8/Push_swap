@@ -6,23 +6,17 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 00:49:30 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/19 09:23:42 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/20 06:17:06 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
-
-// void	rev_rotate_stack(t_stack **root);
-// void	rra(t_stack **a);
-// void	rrb(t_stack **b);
-// void	rrr(t_stack **a, t_stack **b);
 
 void	rev_rotate_stack(t_stack **root);
 void	rra(t_puswap *ps);
 void	rrb(t_puswap *ps);
 void	rrr(t_puswap *ps);
 
-// Function to reverse rotate a stack
 void	rev_rotate_stack(t_stack **root)
 {
 	t_stack *scnd_last;
@@ -44,16 +38,13 @@ void	rra(t_puswap *ps)
 	rev_rotate_stack(&(ps->a));
 	ft_putstr_fd("rra\n", 1);
 	ps->total_moves++;
-	print_stacks(ps);
 }
 
 void	rrb(t_puswap *ps)
 {
 	rev_rotate_stack(&(ps->b));
 	ft_putstr_fd("rrb\n", 1);
-	// ft_putstr_fd("\t\t\t\trrb\n", 1);
 	ps->total_moves++;
-	print_stacks(ps);
 }
 
 void	rrr(t_puswap *ps)
@@ -61,7 +52,5 @@ void	rrr(t_puswap *ps)
 	rev_rotate_stack(&(ps->a));
 	rev_rotate_stack(&(ps->b));
 	ft_putstr_fd("rrr\n", 1);
-	// ft_putstr_fd("\t\trrr\n", 1);
 	ps->total_moves++;
-	print_stacks(ps);
 }

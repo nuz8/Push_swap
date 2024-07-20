@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 00:52:33 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/17 00:17:15 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/20 06:19:10 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,60 +94,6 @@ int	ft_stack_size(t_stack *root)
 	return (i);
 }
 
-// void	ft_stack_minmax(t_stack *root, int *minmax)
-void	ft_stack_minmax(t_puswap *ps)
-{
-	t_stack	*cur;
-	
-	ps->minmax[0] = ps->a->num;
-	ps->minmax[1] = ps->a->num;
-	cur = ps->a;
-	while (cur)
-	{
-		if (cur->num < ps->minmax[0])
-			ps->minmax[0] = cur->num;
-		if (cur->num > ps->minmax[1])
-			ps->minmax[1] = cur->num;
-		cur = cur->next;
-	}
-}
-
-int	ft_stack_min(t_stack *root)
-{
-	int	min;
-	t_stack	*cur;
-
-	min = root->num;
-	cur = root;
-	while (cur)
-	{
-		if (cur->num < min)
-			min = cur->num;
-		cur = cur->next;
-	}
-	return (min);
-}
-
-int	ft_stack_max(t_stack *root)
-{
-	int	max;
-	t_stack	*cur;
-
-	max = root->num;
-	cur = root;
-	while (cur)
-	{
-		if (cur->num > max)
-			max = cur->num;
-		cur = cur->next;
-	}
-	return (max);
-}
-
-// ft_stack_dup()
-// {
-	
-// }
 
 /* ************************************************************************** */
 

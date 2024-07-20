@@ -6,17 +6,11 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 22:57:23 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/19 04:14:50 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/20 06:53:50 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
-
-// void	start_sorting(t_stack **a, t_stack **b);
-// void	sort_three(t_stack **a);
-// void	sort_five(t_stack **a, t_stack **b, int list_size);
-// void	get_next_min(t_stack **a, int min);
-// void	execute_rotation(t_stack **a, int *cost);
 
 void	start_sorting(t_puswap *ps);
 void	sort_three(t_puswap *ps);
@@ -25,16 +19,14 @@ void	get_next_min(t_puswap *ps, int new_min);
 void	execute_rotation(t_puswap *ps, int *cost);
 
 // Function to select and execute the sorting algorithm based on the size of the list
-// void	start_sorting(t_stack **a, t_stack **b)
 void	start_sorting(t_puswap *ps)
 {
 	ps->list_size = ft_stack_size(ps->a);
-	// ft_stack_minmax(ps);
 	ps->minmax[0] = ft_stack_min(ps->a);
 	ps->minmax[1] = ft_stack_max(ps->a);
 	index_list(ps);
 	if (ps->list_size == 1)
-		exit(0) ;
+		frexit(2, NULL, ps, NULL, 1) ;
 	else if (ps->list_size == 2)
 		sa(ps);
 	else if (ps->list_size == 3)
@@ -46,7 +38,6 @@ void	start_sorting(t_puswap *ps)
 }
 
 // Function to sort three numbers
-// void	sort_three(t_stack **a);
 void	sort_three(t_puswap *ps)
 {
 	int	elem[3];
@@ -77,12 +68,10 @@ void	sort_three(t_puswap *ps)
 }
 
 // Function to sort five numbers using sort_three function
-// void	sort_five(t_stack **a, t_stack **b, int list_size);
 void	sort_five(t_puswap *ps)
 {
 	int	new_min;
 	int	i;
-	// int	minmax[2];
 
 	i = 0;
 	while (i < 2)
@@ -90,23 +79,17 @@ void	sort_five(t_puswap *ps)
 		new_min = ft_stack_min(ps->a);
 		if (ps->a->num != ps->minmax[0])
 			get_next_min(ps, new_min);
-		// if (is_sorted(ps->a) && !(ps->b))
-		if (is_sorted(ps->a) && ft_stack_size(ps->a) == ps->list_size)
+		if (is_sorted(ps->a) && !(ps->b))
 			return ;
 		pb(ps);
 		i++;
 	}
-	// minmax[0] = ft_stack_min(ps->a);
-	// minmax[1] = ft_stack_max(ps->a);
 	sort_three(ps);
-	// i = 0;
-	// while (i++ < (ps->list_size - 3))
 	while (i--)
 		pa(ps);
 }
 
 // Function to rotate/shuffle the stack until the smallest number is at the top
-// void	get_next_min(t_stack **a, int min)
 void	get_next_min(t_puswap *ps, int new_min)
 {
 	int	cost[2];
@@ -136,7 +119,6 @@ void	get_next_min(t_puswap *ps, int new_min)
 }
 
 // Function to execute actual rotation based on total cost
-// void	execute_rotation(t_stack **a, int *cost)
 void	execute_rotation(t_puswap *ps, int *cost)
 {
 	int	i;
