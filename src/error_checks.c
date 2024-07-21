@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 02:41:02 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/22 00:53:58 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/22 01:34:05 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	check_digits_numstr(t_puswap *ps, char *num_str)
 
 	i = 0;
 	if (num_str[i] == '\0')
-			frexit("Error\n", ps, NULL, 2);
+		frexit("Error\n", ps, NULL, 2);
 	while (num_str[i])
 	{
 		if (!ft_isdigit(num_str[i]) && num_str[i] != ' ' && num_str[i] != '-')
@@ -44,7 +44,7 @@ void	check_digits_argv(t_puswap *ps, char **argv)
 		j = 0;
 		while (argv[i][j])
 		{
-			if (!ft_isdigit(argv[i][j]) && argv[i][j] != ' ' 
+			if (!ft_isdigit(argv[i][j]) && argv[i][j] != ' '
 			&& argv[i][j] != '-')
 				frexit("Error\n", ps, NULL, 2);
 			j++;
@@ -74,7 +74,7 @@ void	avoid_long(t_puswap *ps)
 void	avoid_duplicates(t_puswap *ps)
 {
 	t_stack	*cur[2];
-	
+
 	cur[0] = ps->a;
 	while (cur[0])
 	{
@@ -100,10 +100,10 @@ void	avoid_lesinvalides(t_puswap *ps, int argc, char **argv)
 		j = 0;
 		while (argv[i][j])
 		{
-			if (((argv[i][j] == '-' || argv[i][j] == '+') && 
-			argv[i][j + 1] == ' ') || (ft_isdigit(argv[i][j]) && 
-			(argv[i][j + 1] == '-' || argv[i][j + 1] == '+')) || 
-			(argv[i][j] == '-' && (argv[i][j + 1] == '-' || 
+			if (((argv[i][j] == '-' || argv[i][j] == '+') &&
+			argv[i][j + 1] == ' ') || (ft_isdigit(argv[i][j]) &&
+			(argv[i][j + 1] == '-' || argv[i][j + 1] == '+')) ||
+			(argv[i][j] == '-' && (argv[i][j + 1] == '-' ||
 			argv[i][j + 1] == '\0')))
 				frexit("Error\n", ps, NULL, 2);
 			j++;
@@ -111,5 +111,5 @@ void	avoid_lesinvalides(t_puswap *ps, int argc, char **argv)
 		if (argc == 2)
 			break ;
 		i++;
-	}	
+	}
 }

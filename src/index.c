@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/14 23:24:28 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/20 23:28:07 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/22 01:35:02 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ void	index_list(t_puswap *ps)
 t_stack	*get_nxtmin_node(t_stack *cur, int min, int new_max, int index)
 {
 	t_stack	*nxtmin_node;
-	
-	while(cur)
+
+	while (cur)
 	{
 		if (index == 0 && cur->num == min)
 			nxtmin_node = cur;

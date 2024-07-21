@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 06:34:37 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/21 01:56:05 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/22 01:42:02 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	is_descending(t_stack *stk_b)
 
 int	ft_stack_min(t_stack *root)
 {
-	int	min;
+	int		min;
 	t_stack	*cur;
 
 	min = root->num;
@@ -63,7 +63,7 @@ int	ft_stack_min(t_stack *root)
 
 int	ft_stack_max(t_stack *root)
 {
-	int	max;
+	int		max;
 	t_stack	*cur;
 
 	max = root->num;

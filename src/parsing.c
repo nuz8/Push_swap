@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 18:30:29 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/22 00:53:55 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/22 01:38:19 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ void	parse_and_handle_errors(t_puswap *ps, int argc, char **argv)
 		frexit(NULL, ps, NULL, 1);
 }
 
-// New function to parse the input string when argc =2, and create a linked list of integers
+// Function (modified) to parse the input string when argc =2, and create
+// a linked list of integers
 void	parse_numstr(t_puswap *ps, char *num_str)
 {
 	char	**split;
@@ -45,7 +46,7 @@ void	parse_numstr(t_puswap *ps, char *num_str)
 	int		i;
 
 	split = ft_split(num_str, ' ');
-	if(!split)
+	if (!split)
 		frexit("Error: split\n", NULL, NULL, 3);
 	i = 0;
 	while (split[i])
@@ -59,7 +60,8 @@ void	parse_numstr(t_puswap *ps, char *num_str)
 	ft_free2d(split);
 }
 
-// New function to parse the integer character inputs (i.e. argc > 2), and create a linked list of integers
+// Function (modified) to parse the integer character inputs (i.e. argc > 2), 
+// and create a linked list of integers
 void	parse_nums(t_puswap *ps, char **argv)
 {
 	t_stack	*cur;
@@ -79,7 +81,7 @@ void	parse_nums(t_puswap *ps, char **argv)
 			cur = ft_stack_new(ft_atol(split[si]));
 			if (!cur)
 				frexit("Error: node malloc\n", ps, split, 3);
-			ft_stack_addback(&(ps->a), cur);	
+			ft_stack_addback(&(ps->a), cur);
 			si++;
 		}
 		ft_free2d(split);

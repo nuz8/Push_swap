@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 00:49:33 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/20 06:15:37 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/22 01:36:02 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	rr(t_puswap *ps);
 
 void	rotate_stack(t_stack **root)
 {
-	t_stack *first;
+	t_stack	*first;
 	t_stack	*last;
 
 	if (!(*root) || !((*root)->next))

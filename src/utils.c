@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 00:49:33 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/22 00:54:11 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/22 01:43:47 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_power(int base, int exp)
 	int	result;
 
 	if ((base == 0 && exp == 0) || exp < 0 || (base == 0 && exp < 0))
-		exit(1);	
+		exit(1);
 	if (base == 1 || exp == 0)
 		return (1);
 	if (base == 0 && exp != 0)
@@ -37,7 +37,7 @@ int	ft_power(int base, int exp)
 void	frexit(char *str, t_puswap *ps, char **split, int ec)
 {
 	int	fd;
-	
+
 	if (ec == 0)
 		fd = 1;
 	else

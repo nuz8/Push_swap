@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 22:57:23 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/22 00:57:48 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/22 01:41:35 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ void	sort_five(t_puswap *ps);
 void	get_next_min(t_puswap *ps, int new_min);
 void	execute_rotation(t_puswap *ps, int *cost);
 
-// Function to select and execute the sorting algorithm based on the size of the list
+// Function to select and execute the sorting algorithm based on the size of 
+// the list
 void	start_sorting(t_puswap *ps)
 {
 	ps->list_size = ft_stack_size(ps->a);
@@ -26,7 +27,7 @@ void	start_sorting(t_puswap *ps)
 	ps->minmax[1] = ft_stack_max(ps->a);
 	index_list(ps);
 	if (ps->list_size == 1)
-		frexit(NULL, ps, NULL, 1) ;
+		frexit(NULL, ps, NULL, 1);
 	else if (ps->list_size == 2)
 		sa(ps);
 	else if (ps->list_size == 3)
@@ -124,7 +125,7 @@ void	get_next_min(t_puswap *ps, int new_min)
 void	execute_rotation(t_puswap *ps, int *cost)
 {
 	int	i;
-	
+
 	i = 0;
 	if (cost[0] <= cost[1])
 	{

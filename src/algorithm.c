@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 21:15:49 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/22 01:24:53 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/22 01:31:57 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	sort_bit(t_puswap *ps, int *list, int bit)
 				pb(ps);
 			list[0]--;
 			if (is_sorted(ps->a))
-				break;
+				break ;
 		}
 		else if (list[1])
 		{
@@ -67,14 +67,14 @@ void	sort_bit(t_puswap *ps, int *list, int bit)
 				rb(ps);
 			list[1]--;
 			if (is_descending(ps->b))
-				break;
+				break ;
 		}
 		if (is_sorted(ps->a) && is_descending(ps->b))
 			break ;
 	}
 }
 
-int		get_bits(int list_size)
+int	get_bits(int list_size)
 {
 	int		bits;
 
@@ -108,7 +108,7 @@ static void	check_swap_rotate(t_puswap *ps)
 static void	check_rotate(t_puswap *ps, int swap_toggle)
 {
 	int	count;
-	
+
 	count = 0;
 	while (ps->a->index != 0)
 	{
