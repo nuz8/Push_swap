@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 00:36:33 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/20 07:06:39 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/21 01:00:23 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,8 @@ void	avoid_duplicates(t_puswap *ps);
 t_stack	*ft_stack_new(long lnum);
 t_stack	*ft_stack_last(t_stack *stk);
 void	ft_stack_addback(t_stack **root, t_stack *new);
-void	ft_stack_free(t_stack **root);
 int		ft_stack_size(t_stack *root);
+void	ft_stack_free(t_stack **root);
 
 // op_push.c
 void	push_stack(t_stack **receiver, t_stack **sender);
@@ -98,7 +98,6 @@ int		ft_power(int base, int exp);
 // stack_info.c
 int		is_sorted(t_stack *root);
 int		is_descending(t_stack *stk_b);
-void	ft_stack_minmax(t_puswap *ps);
 int		ft_stack_min(t_stack *root);
 int		ft_stack_max(t_stack *root);
 

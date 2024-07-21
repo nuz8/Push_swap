@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 22:57:23 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/20 06:53:50 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/21 00:53:48 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,9 +72,11 @@ void	sort_five(t_puswap *ps)
 {
 	int	new_min;
 	int	i;
+	int	j;
 
 	i = 0;
-	while (i < 2)
+	j = ps->list_size - 3;
+	while (i < j)
 	{
 		new_min = ft_stack_min(ps->a);
 		if (ps->a->num != ps->minmax[0])

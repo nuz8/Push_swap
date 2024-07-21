@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 00:52:33 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/20 06:19:10 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/20 23:57:06 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,8 @@
 t_stack	*ft_stack_new(long lnum);
 t_stack	*ft_stack_last(t_stack *stk);
 void	ft_stack_addback(t_stack **root, t_stack *new);
-void	ft_stack_free(t_stack **root);
 int		ft_stack_size(t_stack *root);
-// void	ft_stack_minmax(t_stack *root, int *minmax);
-void	ft_stack_minmax(t_puswap *ps);
-int		ft_stack_min(t_stack *root);
-int		ft_stack_max(t_stack *root);
-
-// Used functions from list-manipulations for stack
+void	ft_stack_free(t_stack **root);
 
 t_stack	*ft_stack_new(long lnum)
 {
@@ -62,23 +56,6 @@ void	ft_stack_addback(t_stack **root, t_stack *new)
 	last->next = new;
 }
 
-void	ft_stack_free(t_stack **root)
-{
-	t_stack	*del_node;
-	t_stack	*free_node;
-
-	if (!root)
-		return ;
-	del_node = *root;
-	while (del_node)
-	{
-		free_node = del_node;
-		del_node = del_node->next;
-		free(free_node);
-	}
-	*root = NULL;
-}
-
 int	ft_stack_size(t_stack *root)
 {
 	int	i;
@@ -94,80 +71,19 @@ int	ft_stack_size(t_stack *root)
 	return (i);
 }
 
+void	ft_stack_free(t_stack **root)
+{
+	t_stack	*del_node;
+	t_stack	*free_node;
 
-/* ************************************************************************** */
-
-// Unused functions from list-manipulations
-
-// void	ft_stackadd_front(t_stack **stk, t_stack *new)
-// {
-// 	if (stk && new)
-// 	{
-// 		new->next = *stk;
-// 		*stk = new;
-// 	}
-// 	else
-// 		return ;
-// }
-
-// void	ft_stackclear(t_stack **lst, void (*del)(void *))
-// {
-// 	t_stack	*del_node;
-// 	t_stack	*free_node;
-
-// 	if (!lst || !del)
-// 		return ;
-// 	del_node = *lst;
-// 	while (del_node)
-// 	{
-// 		free_node = del_node;
-// 		del(del_node);
-// 		del_node = del_node->next;
-// 		free(free_node);
-// 	}
-// 	*lst = NULL;
-// }
-
-// void	ft_stackdelone(t_stack *stk, void (*del)(void*))
-// {
-// 	if (!stk && !del)
-// 		return ;
-// 	del(stk->num);
-// 	del(stk->index);
-// 	free(stk);
-// }
-
-// void	ft_stackiter(t_stack *stk, void (*f)(void *))
-// {
-// 	if (!stk || !f)
-// 		return ;
-// 	while (stk)
-// 	{
-// 		f(stk->num);
-// 		f(stk->index);
-// 		stk = stk->next;
-// 	}
-// }
-
-// t_stack	*ft_stackmap(t_stack *stk, void *(*f)(void *), void (*del)(void *))
-// {
-// 	t_stack	*new_stk;
-// 	t_stack	*node;
-// 	t_stack	*content;
-
-// 	if (!stk || !f || !del)
-// 		return (NULL);
-// 	new_stk = NULL;
-// 	while (stk)
-// 	{
-// 		content->num = f(stk->num);
-// 		content->index = f(stk->index);
-// 		node = ft_stacknew(content);
-// 		ft_stackadd_back(&new_stk, node);
-// 		if (!node || !new_stk)
-// 			return (del(content), ft_stackclear(&new_stk, del), NULL);
-// 		stk = stk->next;
-// 	}
-// 	return (new_stk);
-// }
-
+	if (!root || !*root)
+		return ;
+	del_node = *root;
+	while (del_node)
+	{
+		free_node = del_node;
+		del_node = del_node->next;
+		free(free_node);
+	}
+	*root = NULL;
+}

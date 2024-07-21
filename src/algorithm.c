@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 21:15:49 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/20 07:05:43 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/21 00:43:51 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,39 +17,6 @@ void		sort_bit(t_puswap *ps, int *list, int bit);
 int			get_bits(int list_size);
 void		check_swap_rotate(t_puswap *ps);
 static void	check_rotate(t_puswap *ps, int swap_toggle);
-
-// // Radix1: Simple radix implementation
-// // void	radix_sort(t_stack **a, t_stack **b, int list_size)
-// void	radix_sort(t_puswap *ps)
-// {
-// 	int	bits;
-// 	int	list;
-// 	int	i;
-
-// 	bits = get_bits(ps->list_size);
-// 	i = 0;
-// 	// check_swap_rotate(ps);
-// 	while (i < bits)
-// 	{
-// 		list = ps->list_size;
-// 		while (list)
-// 		{
-// 			if ((ps->a->index) & ft_power(2, i))
-// 				ra(ps);
-// 			else
-// 				pb(ps);
-// 			list--;
-// 			if (is_sorted(ps->a))
-// 				break;
-// 			// pre_optimizers(ps, list);
-// 		}
-// 		while (ps->b)
-// 			pa(ps);
-// 		i++;
-// 		// if (!*b && is_sorted(a))
-// 		// 	return ;
-// 	}
-// }
 
 // Radix2: Radix implementation with smart push based on no. of elements left in each stack
 void	radix_sort(t_puswap *ps)
@@ -118,39 +85,6 @@ int		get_bits(int list_size)
 	}
 	return (bits);
 }
-
-// void	check_swap_rotate(t_puswap *ps)
-// {
-// 	int	swap_toggle;
-// 	int	count;
-
-// 	swap_toggle = 0;
-// 	if (ps->a->index > ps->a->next->index)
-// 	{
-// 		swap_stack(&(ps->a));
-// 		if (is_sorted(ps->a))
-// 			frexit(1, "sa\n", ps, NULL, 0);
-// 		swap_toggle = 1;
-// 	}
-// 	count = 0;
-// 	while (ps->a->index != 0)
-// 	{
-// 		rotate_stack(&(ps->a));
-// 		count++;
-// 	}
-// 	if (is_sorted(ps->a))
-// 	{
-// 		if (swap_toggle)
-// 			ft_putstr_fd("sa\n", 1);
-// 		while (count--)
-// 			ft_putstr_fd("ra\n", 1);
-// 		frexit(1, NULL, ps, NULL, 0);
-// 	}
-// 	while (count--)
-// 		rev_rotate_stack(&(ps->a));
-// 	if (swap_toggle)
-// 		swap_stack(&(ps->a));
-// }
 
 void	check_swap_rotate(t_puswap *ps)
 {

@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 06:34:37 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/20 06:36:09 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/21 01:56:05 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int		is_sorted(t_stack *root);
 int		is_descending(t_stack *stk_b);
-void	ft_stack_minmax(t_puswap *ps);
 int		ft_stack_min(t_stack *root);
 int		ft_stack_max(t_stack *root);
 
@@ -44,23 +43,6 @@ int	is_descending(t_stack *stk_b)
 		cur = cur->next;
 	}
 	return (1);
-}
-
-void	ft_stack_minmax(t_puswap *ps)
-{
-	t_stack	*cur;
-	
-	ps->minmax[0] = ps->a->num;
-	ps->minmax[1] = ps->a->num;
-	cur = ps->a;
-	while (cur)
-	{
-		if (cur->num < ps->minmax[0])
-			ps->minmax[0] = cur->num;
-		if (cur->num > ps->minmax[1])
-			ps->minmax[1] = cur->num;
-		cur = cur->next;
-	}
 }
 
 int	ft_stack_min(t_stack *root)

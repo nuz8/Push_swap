@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 02:41:02 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/20 06:34:52 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/21 03:11:48 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ void	check_digits_numstr(t_puswap *ps, char *num_str)
 	int	i;
 
 	i = 0;
+	if (num_str[i] == '\0')
+			frexit(2, "Error\n", ps, NULL, 2);
 	while (num_str[i])
 	{
 		if (!ft_isdigit(num_str[i]) && num_str[i] != ' ' && num_str[i] != '-')
@@ -84,4 +86,3 @@ void	avoid_duplicates(t_puswap *ps)
 		cur[0] = cur[0]->next;
 	}
 }
-
