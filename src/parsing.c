@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 18:30:29 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/21 09:15:19 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/22 00:37:01 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,34 @@ void	parse_and_handle_errors(t_puswap *ps, int argc, char **argv)
 		frexit(2, NULL, ps, NULL, 1);
 }
 
-// Function to parse the input string when argc =2, and create a linked list of integers
+// // Function to parse the input string when argc =2, and create a linked list of integers
+// void	parse_numstr(t_puswap *ps, char *num_str)
+// {
+// 	char	**split;
+// 	t_stack	*cur;
+// 	int		i;
+
+// 	split = ft_split(num_str, ' ');
+// 	if(!split)
+// 		frexit(2, "Error\n", NULL, NULL, 3);
+// 	i = 0;
+// 	while (split[i])
+// 	{
+// 		if (ft_isdigit(*split[i]) || *split[i] == '-')
+// 		{
+// 			cur = ft_stack_new(ft_atol(split[i]));
+// 			if (!cur)
+// 				frexit(2, "Error\n", ps, split, 3);
+// 			ft_stack_addback(&(ps->a), cur);
+// 		}
+// 		else
+// 			frexit(2, "Error\n", ps, split, 2);
+// 		i++;
+// 	}
+// 	ft_free2d(split);
+// }
+
+// New function to parse the input string when argc =2, and create a linked list of integers
 void	parse_numstr(t_puswap *ps, char *num_str)
 {
 	char	**split;
@@ -50,38 +77,61 @@ void	parse_numstr(t_puswap *ps, char *num_str)
 	i = 0;
 	while (split[i])
 	{
-		if (ft_isdigit(*split[i]) || *split[i] == '-')
-		{
-			cur = ft_stack_new(ft_atol(split[i]));
-			if (!cur)
-				frexit(2, "Error\n", ps, split, 3);
-			ft_stack_addback(&(ps->a), cur);
-		}
-		else
-			frexit(2, "Error\n", ps, split, 2);
+		cur = ft_stack_new(ft_atol(split[i]));
+		if (!cur)
+			frexit(2, "Error\n", ps, split, 3);
+		ft_stack_addback(&(ps->a), cur);
 		i++;
 	}
 	ft_free2d(split);
 }
 
-// Function to parse the integer character inputs (i.e. argc > 2), and create a linked list of integers
+// // Function to parse the integer character inputs (i.e. argc > 2), and create a linked list of integers
+// void	parse_nums(t_puswap *ps, char **argv)
+// {
+// 	t_stack	*cur;
+// 	int		i;
+
+// 	i = 1;
+// 	while (argv[i])
+// 	{
+// 		if (ft_isdigit(*argv[i]) || *argv[i] == '-')
+// 		{
+// 			cur = ft_stack_new(ft_atol(argv[i]));
+// 			if (!cur)
+// 				frexit(2, "Error\n", ps, NULL, 3);
+// 			ft_stack_addback(&(ps->a), cur);
+// 		}
+// 		else
+// 			frexit(2, "Error\n", ps, NULL, 2);
+// 		i++;
+// 	}
+// }
+
+// New function to parse the integer character inputs (i.e. argc > 2), and create a linked list of integers
 void	parse_nums(t_puswap *ps, char **argv)
 {
 	t_stack	*cur;
+	char	**split;
 	int		i;
+	int		si;
 
 	i = 1;
 	while (argv[i])
 	{
-		if (ft_isdigit(*argv[i]) || *argv[i] == '-')
+		split = ft_split(argv[i], ' ');
+		if (!split)
+			frexit(2, "Error: split\n", ps, NULL, 3);
+		si = 0;
+		while (split[si])
 		{
-			cur = ft_stack_new(ft_atol(argv[i]));
+			cur = ft_stack_new(ft_atol(split[si]));
 			if (!cur)
-				frexit(2, "Error\n", ps, NULL, 3);
-			ft_stack_addback(&(ps->a), cur);
+				frexit(2, "Error: node malloc\n", ps, split, 3);
+			ft_stack_addback(&(ps->a), cur);	
+			si++;
 		}
-		else
-			frexit(2, "Error\n", ps, NULL, 2);
+		ft_free2d(split);
 		i++;
 	}
 }

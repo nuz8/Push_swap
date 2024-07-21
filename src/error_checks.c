@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 02:41:02 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/21 09:27:07 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/22 00:16:23 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,8 @@ void	check_digits_argv(t_puswap *ps, char **argv)
 		j = 0;
 		while (argv[i][j])
 		{
-			if (!ft_isdigit(argv[i][j]) && argv[i][j] != '-')
+			if (!ft_isdigit(argv[i][j]) && argv[i][j] != ' ' 
+			&& argv[i][j] != '-')
 				frexit(2, "Error\n", ps, NULL, 2);
 			j++;
 		}
