@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 00:36:33 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/22 00:53:56 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/22 01:21:49 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,6 @@ void	execute_rotation(t_puswap *ps, int *cost);
 void	radix_sort(t_puswap *ps);
 void	sort_bit(t_puswap *ps, int *list, int bit);
 int		get_bits(int list_size);
-int		ft_power(int base, int exp);
 
 // stack_info.c
 int		is_sorted(t_stack *root);

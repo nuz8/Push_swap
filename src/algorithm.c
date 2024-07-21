@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 21:15:49 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/22 00:53:10 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/22 01:24:53 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,11 @@
 void		radix_sort(t_puswap *ps);
 void		sort_bit(t_puswap *ps, int *list, int bit);
 int			get_bits(int list_size);
-void		check_swap_rotate(t_puswap *ps);
+static void	check_swap_rotate(t_puswap *ps);
 static void	check_rotate(t_puswap *ps, int swap_toggle);
 
-// Radix2: Radix implementation with smart push based on no. of elements left in each stack
+// Radix2: Radix implementation with smart push based on no. of elements 
+// left in each stack
 void	radix_sort(t_puswap *ps)
 {
 	int	bits;
@@ -86,7 +87,7 @@ int		get_bits(int list_size)
 	return (bits);
 }
 
-void	check_swap_rotate(t_puswap *ps)
+static void	check_swap_rotate(t_puswap *ps)
 {
 	int	swap_toggle;
 
