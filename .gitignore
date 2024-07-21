@@ -1,9 +1,0 @@
-.gitignore
-push_swap_visualizer/
-Push-Swap-Tester/
-push_swap_test.sh
-checker_Mac
-traces.txt
-0
-.vscode/
-.DS_Store
