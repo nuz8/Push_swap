@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 00:35:36 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/21 05:44:58 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/22 00:53:54 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main(int argc, char **argv)
 		return (1);
 	ps = malloc(sizeof(t_puswap));
 	if (!ps)
-		frexit(2, "Malloc error\n", NULL, NULL, 3);
+		frexit("Error: struct malloc\n", NULL, NULL, 3);
 	ps->a = NULL;
 	ps->b = NULL;
 	if (argc >= 2)

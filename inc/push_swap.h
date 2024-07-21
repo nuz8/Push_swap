@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 00:36:33 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/21 09:12:13 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/22 00:53:56 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,6 @@ int		ft_stack_max(t_stack *root);
 
 // utils.c
 int		ft_power(int base, int exp);
-void	frexit(int fd, char *str, t_puswap *ps, char **split, int ec);
+void	frexit(char *str, t_puswap *ps, char **split, int ec);
 
 #endif

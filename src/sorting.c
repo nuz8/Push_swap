@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 22:57:23 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/21 00:53:48 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/22 00:57:48 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	start_sorting(t_puswap *ps)
 	ps->minmax[1] = ft_stack_max(ps->a);
 	index_list(ps);
 	if (ps->list_size == 1)
-		frexit(2, NULL, ps, NULL, 1) ;
+		frexit(NULL, ps, NULL, 1) ;
 	else if (ps->list_size == 2)
 		sa(ps);
 	else if (ps->list_size == 3)

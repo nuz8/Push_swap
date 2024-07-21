@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 21:15:49 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/21 00:43:51 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/22 00:53:10 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ void	check_swap_rotate(t_puswap *ps)
 	{
 		swap_stack(&(ps->a));
 		if (is_sorted(ps->a))
-			frexit(1, "sa\n", ps, NULL, 0);
+			frexit("sa\n", ps, NULL, 0);
 		swap_toggle = 1;
 	}
 	check_rotate(ps, swap_toggle);
@@ -120,7 +120,7 @@ static void	check_rotate(t_puswap *ps, int swap_toggle)
 			ft_putstr_fd("sa\n", 1);
 		while (count--)
 			ft_putstr_fd("ra\n", 1);
-		frexit(1, NULL, ps, NULL, 0);
+		frexit(NULL, ps, NULL, 0);
 	}
 	while (count--)
 		rev_rotate_stack(&(ps->a));
