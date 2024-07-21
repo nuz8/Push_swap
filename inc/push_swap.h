@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 00:36:33 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/21 01:00:23 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/21 09:12:13 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ void	check_digits_numstr(t_puswap *ps, char *num_str);
 void	check_digits_argv(t_puswap *ps, char **argv);
 void	avoid_long(t_puswap *ps);
 void	avoid_duplicates(t_puswap *ps);
+void	avoid_lesinvalides(t_puswap *ps, int argc, char **argv);
 
 // list_fns.c: functions adapted from libft
 t_stack	*ft_stack_new(long lnum);

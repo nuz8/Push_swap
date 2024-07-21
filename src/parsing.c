@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 18:30:29 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/21 02:56:42 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/21 09:15:19 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,13 @@ void	parse_and_handle_errors(t_puswap *ps, int argc, char **argv)
 	if (argc == 2)
 	{
 		check_digits_numstr(ps, argv[1]);
+		avoid_lesinvalides(ps, argc, argv);
 		parse_numstr(ps, argv[1]);
 	}
 	else
 	{
 		check_digits_argv(ps, argv);
+		avoid_lesinvalides(ps, argc, argv);
 		parse_nums(ps, argv);
 	}
 	avoid_long(ps);

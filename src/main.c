@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 00:35:36 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/21 04:25:32 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/21 05:44:58 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ int	main(int argc, char **argv)
 		parse_and_handle_errors(ps, argc, argv);
 		start_sorting(ps);
 	}
-	
 	ft_stack_free(&(ps->a));
 	ft_stack_free(&(ps->b));
 	free(ps);

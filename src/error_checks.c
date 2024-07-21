@@ -6,7 +6,7 @@
 /*   By: pamatya <pamatya@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 02:41:02 by pamatya           #+#    #+#             */
-/*   Updated: 2024/07/21 03:11:48 by pamatya          ###   ########.fr       */
+/*   Updated: 2024/07/21 09:27:07 by pamatya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	check_digits_numstr(t_puswap *ps, char *num_str);
 void	check_digits_argv(t_puswap *ps, char **argv);
 void	avoid_long(t_puswap *ps);
 void	avoid_duplicates(t_puswap *ps);
+void	avoid_lesinvalides(t_puswap *ps, int argc, char **argv);
 
 void	check_digits_numstr(t_puswap *ps, char *num_str)
 {
@@ -85,4 +86,29 @@ void	avoid_duplicates(t_puswap *ps)
 		}
 		cur[0] = cur[0]->next;
 	}
+}
+
+void	avoid_lesinvalides(t_puswap *ps, int argc, char **argv)
+{
+	int		i;
+	int		j;
+
+	i = 1;
+	while (argv[i])
+	{
+		j = 0;
+		while (argv[i][j])
+		{
+			if (((argv[i][j] == '-' || argv[i][j] == '+') && 
+			argv[i][j + 1] == ' ') || (ft_isdigit(argv[i][j]) && 
+			(argv[i][j + 1] == '-' || argv[i][j + 1] == '+')) || 
+			(argv[i][j] == '-' && (argv[i][j + 1] == '-' || 
+			argv[i][j + 1] == '\0')))
+				frexit(2, "Error\n", ps, NULL, 2);
+			j++;
+		}
+		if (argc == 2)
+			break ;
+		i++;
+	}	
 }
